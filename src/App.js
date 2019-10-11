@@ -5,8 +5,8 @@ const Template = (props) => {
   return (
     <div>
       <nav>
-          <Link to= "/page1">page1</Link>
-          <Link to= "/page2">page2</Link>
+          <Link to="/page1">page1</Link>
+          <Link to="/page2">page2</Link>
         </nav>
        {props.children} 
     </div>  
@@ -17,15 +17,14 @@ const Template = (props) => {
 export class App extends Component {
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/" component = {Template}>
-          <IndexRoute component = {Page1}/>
-        <Route path= "/page1" component = {Page1}/>  
-        <Route path= "/page2" component = {Page2}/>  
-        </Route>
-        <Route path="*" component ={NotFound}/>
-      </Router>
-    );
+      <div>
+        <nav>
+          <Link to="page1">Page1</Link>
+          <Link to="page2">Page2</Link>
+        </nav>
+          {this.props.children}
+      </div>
+    )
   }
 }
 
